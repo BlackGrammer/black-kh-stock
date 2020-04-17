@@ -24,7 +24,7 @@ class MyWindow(QMainWindow):
         btn3.clicked.connect(self.btn3_clicked)
 
     def btn1_clicked(self):
-        ret = self.kiwoom.dynamicCall("CommConnect()")
+        self.kiwoom.dynamicCall("CommConnect()")
 
     def btn2_clicked(self):
         if self.kiwoom.dynamicCall("GetConnectState()") == 0:
@@ -36,7 +36,7 @@ class MyWindow(QMainWindow):
         if self.kiwoom.dynamicCall("GetConnectState()") == 0:
             self.statusBar().showMessage("Not connected")
         else:
-            login_info = self.kiwoom.dynamicCall("GetLoginInfo('QString')", ["USER_NAME"]);
+            login_info = self.kiwoom.dynamicCall("GetLoginInfo('QString')", ["USER_NAME"])
             self.statusBar().showMessage(login_info)
 
 
