@@ -2,6 +2,7 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QAxContainer import *
 
+
 class MyWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -37,6 +38,7 @@ class MyWindow(QMainWindow):
         else:
             login_info = self.kiwoom.dynamicCall("GetLoginInfo('QString')", ["USER_NAME"]);
             self.statusBar().showMessage(login_info)
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
